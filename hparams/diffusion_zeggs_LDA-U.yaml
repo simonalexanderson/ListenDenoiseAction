@@ -1,0 +1,80 @@
+Data:
+  segment_length: 150
+  style_index: [1]
+  traindata_filename: zeggs_train_files.txt
+  testdata_filename: zeggs_test_files.txt
+  input_modality: audio29_30fps
+  output_modality: expmap_30fps
+  input_feats_file: mfcc16_features.txt
+  datapipe_filename: data_pipe.expmap_30fps.sav
+  trim_edges: 0
+  timestretch_prob: 0.1
+  timestretch_factor: 0.1
+Diffusion:
+  name: tisa #tisa|conv
+  residual_layers: 10
+  residual_channels: 256
+  embedding_dim: 512
+  args:
+    tisa:
+        num_blocks: 4
+        num_heads: 8
+        activation: relu
+        dropout: 0.1
+        norm: T5
+        d_ff: 1024
+        seq_len: 150        
+        use_preln: false
+        bias: false
+        dilation_cycle: [0,1,2]
+    conv:
+        dilation_cycle_length: 10
+  unconditional: false
+  noise_schedule_start: 0.0074
+  noise_schedule_end: 0.78
+  n_noise_schedule: 100
+Infer:
+  eps: 1
+  seq_len: 25
+Optim:
+  Schedule:
+    args:
+      lambda:
+        val: 10
+      multiplicative:
+        val: 10
+      step:
+        gamma: 0.99995
+        step_size: 10
+    name: step
+    warm_up: 3000
+  args:
+    adam:
+      betas:
+      - 0.9
+      - 0.999
+      eps: 1.0e-08
+    rmsprop:
+      eps: 1.0e-08
+    sgd:
+      momentum: 0.9
+  name: adam
+Validation:
+  render: true
+  render_every_n_epochs: 1
+  max_render_clips: 10
+lr: 0.0006
+batch_size: 80
+num_dataloader_workers: 1
+Trainer:
+    accelerator: gpu
+    devices: [6]
+    accumulate_grad_batches: 1
+    default_root_dir: results/training/zeggs_LDA-U
+    gradient_clip_val: 25
+    deterministic: false
+    fast_dev_run: false
+    max_epochs: 6
+    min_epochs: 1
+    precision: 32
+    resume_from_checkpoint: null

@@ -1,0 +1,85 @@
+Data:
+  segment_length: 150
+  style_index: [1]
+  trim_edges: 300
+  styles_file: dance_styles_kth.txt
+  traindata_filename: dance_train_files_kth.txt
+  testdata_filename: dance_test_files_kth.txt
+  input_modality: audio35_30fps
+  output_modality: expmap_30fps
+  input_feats_file: ch0_spec_beatact_features.txt
+  datapipe_filename: data_pipe.expmap_30fps.sav
+  timestretch_prob: 0.2
+  timestretch_factor: 0.1
+Diffusion:
+  name: tisa #tisa|conv
+  residual_layers: 20
+  residual_channels: 256
+  embedding_dim: 512
+  args:
+    tisa:
+        num_blocks: 2
+        num_heads: 8
+        activation: relu
+        dropout: 0.1
+        norm: LN
+        d_ff: 1024
+        seq_len: 150        
+        use_preln: false
+        bias: false
+        dilation_cycle: [0,1,2]
+    conv:
+        dilation_cycle_length: 10
+  unconditional: false  
+  noise_schedule_start: 0.01
+  noise_schedule_end: 0.7
+  n_noise_schedule: 150
+Infer:
+  eps: 1
+  seq_len: 25
+Optim:
+  Schedule:
+    args:
+      lambda:
+        val: 10
+      multiplicative:
+        val: 10
+      step:
+        gamma: 0.99995
+        step_size: 10
+    name: step
+    warm_up: 3000
+  args:
+    adam:
+      betas:
+      - 0.9
+      - 0.999
+      eps: 1.0e-08
+    rmsprop:
+      eps: 1.0e-08
+    sgd:
+      momentum: 0.9
+  name: adam
+Validation:
+  render: true
+  apply_dropout: false
+  render_every_n_epochs: 1
+  max_render_clips: 10
+  gen_synth_ctrl: false
+lr: 0.0006
+batch_size: 80
+num_dataloader_workers: 1
+pruning_amount: 0.0
+quantization: false
+Trainer:
+    accelerator: gpu
+    devices: [2]
+    accumulate_grad_batches: 1
+    default_root_dir: results/training/dance_LDA
+    gradient_clip_val: 25
+    deterministic: false
+    fast_dev_run: false
+    max_epochs: 10
+    min_epochs: 1
+    precision: 32
+    resume_from_checkpoint: null 
