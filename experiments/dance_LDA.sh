@@ -7,7 +7,8 @@ if [ ! -d "${dest_dir}" ]; then
     mkdir -p "${dest_dir}"
 fi
 
-data_dir=data/dance_source/processed_sm0_0_30fps
+data_dir=data/motorica_dance
+wav_dir=data/motorica_dance
 basenames=$(cat "${data_dir}/gen_files.txt")
 
 start=0

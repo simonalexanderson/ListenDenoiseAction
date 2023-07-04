@@ -9,7 +9,7 @@ if [ ! -d "${dest_dir}" ]; then
 fi
 
 data_dir=data/tsg
-basenames=$(cat "${data_dir}/tsg_test_files.txt")
+basenames=$(cat "${data_dir}/gen_files.txt")
 start=0
 seed=150
 fps=30

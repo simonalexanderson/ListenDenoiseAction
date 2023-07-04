@@ -1,7 +1,7 @@
 Data:
   segment_length: 150
-  traindata_filename: genea_train_files.txt
-  testdata_filename: genea_test_files.txt
+  traindata_filename: tsg_train_files.txt
+  testdata_filename: tsg_test_files.txt
   input_modality: audio29_30fps
   output_modality: expmap_30fps
   input_feats_file: mfcc20_features.txt

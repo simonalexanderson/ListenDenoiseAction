@@ -9,6 +9,9 @@ For samples and overview, please see our [project page](https://www.speech.kth.s
 ## Installation
 We provide a Docker file and requirements.txt for installation using a docker image or conda.
 
+## Data and pretrained models
+Download the data and pretrained models from [here]() and move the data folders to 'data' and the checkpoints to 'pretrained_models'.
+
 ## Model Training
 ```
 python train.py <data_dir> <hparams_file>
