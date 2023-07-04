@@ -1,8 +1,8 @@
 # Listen Denoise Action
-This repository contains code for reproducing the papers "[https://www.speech.kth.se/research/listen-denoise-action/](https://arxiv.org/abs/1905.06598)". Parts of the code are based on [this implementation]().
+This repository contains code for reproducing the papers "[https://www.speech.kth.se/research/listen-denoise-action/](https://arxiv.org/abs/2211.09707)".
 
 Please watch the following video for an introduction to the paper:
-* SIGGRAPH 2023 Presentation: [https://youtu.be/pe-YTvavbtA](https://youtu.be/pe-YTvavbtA)
+* SIGGRAPH 2023 Presentation: [https://youtu.be/Qfd2EpzWgok](https://youtu.be/Qfd2EpzWgok)
 
 For samples and overview, please see our [project page](https://www.speech.kth.se/research/listen-denoise-action/).
 
