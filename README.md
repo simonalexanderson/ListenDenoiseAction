@@ -16,7 +16,7 @@ python train.py <data_dir> <hparams_file>
 
 Example:
 ```
-python train.py data/Dance/ hparams/dance_LDA.yaml
+python train.py data/motorica_dance/ hparams/dance_LDA.yaml
 ```
 ## Synthesis
 We provide shell scripts for reproducing the user studies in the paper. To try out locomtion synthesis, please go to http://motorica.ai
