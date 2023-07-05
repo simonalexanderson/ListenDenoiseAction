@@ -8,7 +8,7 @@ if [ ! -d "${dest_dir}" ]; then
     mkdir -p "${dest_dir}"
 fi
 
-data_dir=data/zeggs
+data_dir=data/zeggs/
 guidance_factor="1.5"
 styles=("Happy" "Old" "Relaxed" "Angry" "Speech")
 
@@ -20,7 +20,7 @@ length_s=10
 trim=$((trim_s*fps))
 length=$((length_s*fps))
 fixed_seed=false
-gpu="cuda:6"
+gpu="cuda:0"
 render_video=true
 
 for wavfile in "004_Neutral_3_x_1_0_00" "005_Neutral_4_x_1_0_00" 
@@ -29,9 +29,8 @@ do
 		start=0
 		for postfix in 0 1 2 3 4 5 6 7 8 9 10 11
 		do
-			input_file=${src_dir}/${wavfile}.audio29_${fps}fps.pkl
+			input_file=${wavfile}.audio29_${fps}fps.pkl
 			
-			src2_dir=${src_dir}
 			input_file2=${input_file}
 			output_file=${wavfile::-3}_${postfix}_${style}
 			

@@ -19,7 +19,7 @@ length_s=10
 trim=$((trim_s*fps))
 length=$((length_s*fps))
 fixed_seed=false
-gpu="cuda:6"
+gpu="cuda:0"
 render_video=true
 
 for wavfile in $basenames; 
@@ -27,7 +27,7 @@ do
 	start=0
 	for postfix in 0 1 2 3 4 5 6 7 8 9 10 11
 	do
-		input_file=${src_dir}/${wavfile}.audio29_${fps}fps.pkl
+		input_file=${wavfile}.audio29_${fps}fps.pkl
 		
 		output_file=${wavfile::-3}_${postfix}_${style}
 		

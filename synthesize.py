@@ -1,5 +1,5 @@
 # Copyright 2023 Motorica AB, Inc. All Rights Reserved.
-
+from os.path import join
 import os, sys, getopt
 import torch
 import numpy as np
@@ -96,9 +96,8 @@ def get_style_vector(styles_file, style_token, nbatch, nframes):
     styles = styles_onehot.repeat(nbatch, nframes,1)    
 
 def get_cond(model, data_dir, input_file, style_token, length):
-    
     # Load input features
-    with open(input_file, 'rb') as f:
+    with open(join(data_dir, input_file), 'rb') as f:
         ctrl = pkl.load(f)
     ctrl = ctrl[startframe:]
     if endframe>0 and endframe<ctrl.shape[0]:

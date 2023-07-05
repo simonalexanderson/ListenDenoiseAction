@@ -15,7 +15,7 @@ if [ ! -d "${dest_dir}" ]; then
 fi
 
 data_dir=data/motorica_dance
-basenames=$(cat "${src_dir}/gen_files.txt")
+basenames=$(cat "${data_dir}/gen_files.txt")
 
 # Different guidance factors for mixing models
 guidance_factors_lst=("1.0,1.0" "0.5,0.5" "0.25,1.0" "1.0,0.25")
@@ -29,7 +29,7 @@ length_s=10
 trim=$((trim_s*fps))
 length=$((length_s*fps))
 fixed_seed=false
-gpu="cuda:6"
+gpu="cuda:0"
 render_video=true
 
 for wavfile in $basenames;
@@ -39,7 +39,7 @@ do
 	do		
 		for guidance_factors in ${guidance_factors_lst[@]}; do
 	
-			input_file=${data_dir}/${wavfile}.audio29_${fps}fps.pkl			
+			input_file=${wavfile}.audio29_${fps}fps.pkl			
 			input_file2=${input_file}
 			input_file3=${input_file}					
 			

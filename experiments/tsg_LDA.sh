@@ -8,7 +8,7 @@ if [ ! -d "${dest_dir}" ]; then
     mkdir -p "${dest_dir}"
 fi
 
-data_dir=data/tsg
+data_dir=data/tsg/
 basenames=$(cat "${data_dir}/gen_files.txt")
 start=0
 seed=150
@@ -20,7 +20,7 @@ length=$((length_s*fps))
 model_suffix="LDA"
 fixed_seed=false
 fast=false
-gpu="cuda:6"
+gpu="cuda:0"
 render_video=true
 
 for filebase in $basenames;
@@ -29,7 +29,7 @@ do
 	for postfix in 0 1 2 3 4 5 6 7 8 9 10 11
 	do			
 		style=$(echo $filebase | awk -F "_" '{print $2}')
-		input_file=${data_dir}/${filebase}.audio29_${fps}fps.pkl		
+		input_file=${filebase}.audio29_${fps}fps.pkl		
 		output_file=${filebase::-3}_${postfix}
 		
 		echo Generating motion from ${input_file} to ${dest_dir}/${output_file}		
