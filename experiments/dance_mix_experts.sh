@@ -8,32 +8,27 @@
 checkpoint1=pretrained_models/dance_LDA-U.ckpt
 checkpoint2=pretrained_models/dance_LDA.ckpt
 checkpoint3=${checkpoint2}
-dest_dir=results/dance_interp_exaggerated
+dest_dir=results/dance_mix_experts
 
 if [ ! -d "${dest_dir}" ]; then
     mkdir -p "${dest_dir}"
 fi
 
-src_dir=data/dance_source/testmusic_processed_30fps
-src2_dir=${src_dir}
-wav_dir=data/dance_source/testmusic_processed_30fps/wav
-match_text=sky
-basenames=$(cat "${src_dir}/gen_files_supplementary.txt")
+data_dir=data/motorica_dance
+basenames=$(cat "${src_dir}/gen_files.txt")
 
-is_dancefight=false
+# Different guidance factors for mixing models
 guidance_factors_lst=("1.0,1.0" "0.5,0.5" "0.25,1.0" "1.0,0.25")
 style=None,gJZ,gLO
 
-start=60
+start=0
 seed=150
 fps=30
 trim_s=0
-length_s=20
+length_s=10
 trim=$((trim_s*fps))
 length=$((length_s*fps))
-model_suffix="GDS"
-fixed_seed=true
-fast=false
+fixed_seed=false
 gpu="cuda:6"
 render_video=true
 
@@ -44,10 +39,7 @@ do
 	do		
 		for guidance_factors in ${guidance_factors_lst[@]}; do
 	
-			input_file=${src_dir}/${wavfile}.audio29_${fps}fps.pkl
-			
-			src2_dir=${src_dir}
-			src3_dir=${src_dir}
+			input_file=${data_dir}/${wavfile}.audio29_${fps}fps.pkl			
 			input_file2=${input_file}
 			input_file3=${input_file}					
 			
@@ -56,12 +48,12 @@ do
 			echo Generating motion from ${input_file} to ${dest_dir}/${output_file}		
 			echo "start=${start}, len=${length}, postfix=${postfix}, seed=${seed}"
 
-			python synthesize.py --checkpoints="${checkpoint1},${checkpoint2},${checkpoint3}" --data_dirs="${src_dir},${src2_dir},${src3_dir}" --input_files="${input_file},${input_file2},${input_file3}" --styles="${style}" --start=${start} --end=${length} --trim=${trim} --seed=${seed} --postfix=${postfix} --dest_dir=${dest_dir} --gf=${guidance_factors} --gpu=${gpu} --outfile=${output_file} --video=${render_video}
+			python synthesize.py --checkpoints="${checkpoint1},${checkpoint2},${checkpoint3}" --data_dirs="${data_dir},${data_dir},${data_dir}" --input_files="${input_file},${input_file2},${input_file3}" --styles="${style}" --start=${start} --end=${length} --trim=${trim} --seed=${seed} --postfix=${postfix} --dest_dir=${dest_dir} --gf=${guidance_factors} --gpu=${gpu} --outfile=${output_file} --video=${render_video}
 			if [ "$fixed_seed" != "true" ]; then
 				seed=$((seed+1))
 			fi
 			echo seed=$seed
-			python audio_processing/cut_wav.py ${wav_dir}/${wavfile::-3}.wav $(((start+trim)/fps)) $(((start+length-trim)/fps)) ${postfix} ${dest_dir}
+			python utils/cut_wav.py ${data_dir}/${wavfile::-3}.wav $(((start+trim)/fps)) $(((start+length-trim)/fps)) ${postfix} ${dest_dir}
 			ffmpeg -y -i ${dest_dir}/${output_file}.mp4 -i ${dest_dir}/${wavfile::-3}_${postfix}.wav ${dest_dir}/${output_file}_audio.mp4
 			rm ${dest_dir}/${output_file}.mp4
 			
