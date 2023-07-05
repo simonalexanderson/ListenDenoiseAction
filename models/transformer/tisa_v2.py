@@ -115,3 +115,11 @@ class TisaV2(nn.Module):
         params = torch.log(params)
         params = params + exponential_decay_arguments
         return params.squeeze(0)
+
+    def _init_weights(self):
+        """Initialize the weights"""
+        torch.nn.init.normal_(self.offsets, mean=0.0, std=15.0)
+        torch.nn.init.normal_(self.amplitudes, mean=0.0, std=0.01)
+
+        self.sharpness.data.fill_(5.0)
+        self.bias.data.fill_(1.0)
