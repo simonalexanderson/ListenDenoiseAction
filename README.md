@@ -9,6 +9,13 @@ For samples and overview, please see our [project page](https://www.speech.kth.s
 ## Installation
 We provide a Docker file and requirements.txt for installation using a docker image or conda.
 
+### Installation using conda
+```
+conda install python=3.9
+conda install -c conda-forge mpi4py mpic
+pip install -r requirements.txt
+```
+
 ## Data and pretrained models
 Download the data and pretrained models from [here]() and move the data folders to 'data' and the checkpoints to 'pretrained_models'.
 
