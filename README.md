@@ -1,5 +1,6 @@
 # Listen Denoise Action
-This repository contains code for reproducing the papers "[https://www.speech.kth.se/research/listen-denoise-action/](https://arxiv.org/abs/2211.09707)".
+This repository contains code for reproducing the paper [Listen, denoise, action!
+Audio-driven motion synthesis with diffusion models](https://arxiv.org/abs/2211.09707).
 
 Please watch the following video for an introduction to the paper:
 * SIGGRAPH 2023 Presentation: [https://youtu.be/Qfd2EpzWgok](https://youtu.be/Qfd2EpzWgok)
@@ -38,4 +39,14 @@ We provide shell scripts for reproducing the user studies in the paper. To try o
 ./experiments/zeggs_LDA-G.sh
 ```
 
-
+## Citation
+@article{alexanderson2023listen,
+    title={Listen, Denoise, Action! Audio-Driven Motion Synthesis with Diffusion Models},
+    author={Alexanderson, Simon and Nagy, Rajmund and Beskow, Jonas and Henter, Gustav Eje},
+    journal={ACM Trans. Graph.},
+    volume={42},
+    number={4},
+    pages={1--20},
+    doi={10.1145/3592458},
+    year={2023}
+}
