@@ -1,3 +1,18 @@
 License and Copyright Information
 ---------------------------------
-This code is copyright Motorica AB, with all rights reserved. Motorica has been kind to let us release the code for academic researchers to reproduce the results in the paper. The code may not be used for any other purposes, including redistribution or commercial use.
+This code is copyright Motorica AB, with all rights reserved. Motorica has been kind to let us release the code free for academic and non-commercial purposes but we ask that you please include the following citations in any preprints and publications that use this code.
+
+
+    @article{alexanderson2023listen,
+      title={Listen, Denoise, Action! Audio-Driven Motion Synthesis with Diffusion Models},
+      author={Alexanderson, Simon and Nagy, Rajmund and Beskow, Jonas and Henter, Gustav Eje},
+      journal={ACM Trans. Graph.},
+      volume={42},
+      number={4},
+      pages={1--20},
+      doi={10.1145/3592458},
+      year={2023}
+    }
+    
+    
+If you have any questions, or wish to enquire about commercial or other uses, please contact us at info@motorica.ai
