@@ -40,6 +40,7 @@ We provide shell scripts for reproducing the user studies in the paper. To try o
 ```
 
 ## Citation
+```
 @article{alexanderson2023listen,
     title={Listen, Denoise, Action! Audio-Driven Motion Synthesis with Diffusion Models},
     author={Alexanderson, Simon and Nagy, Rajmund and Beskow, Jonas and Henter, Gustav Eje},
@@ -50,3 +51,5 @@ We provide shell scripts for reproducing the user studies in the paper. To try o
     doi={10.1145/3592458},
     year={2023}
 }
+```
+
