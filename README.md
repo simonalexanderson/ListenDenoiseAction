@@ -34,22 +34,21 @@ We provide shell scripts for reproducing the user studies in the paper. To try o
 ```
 ./experiments/dance_LDA.sh
 ./experiments/dance_LDA-U.sh
-./experiments/tsg_LDA.sh
-./experiments/zeggs_LDA.sh
-./experiments/zeggs_LDA-G.sh
 ```
 
-## Citation
+## License and copyright information
+The contents of this repository may not be used for any purpose other than academic research. It is free to use for research purposes by academic institutes, companies, and individuals. Use for commercial purposes is not permitted without prior written consent from Motorica AB. If you are interested in using the codebase or the dataset for commercial purposes or non-research purposes, please contact us at info@motorica.ai in advance. Unauthorized redistribution of any content of the database is prohibited.
+
+Please include the following citations in any preprints and publications that use this repository.
 ```
 @article{alexanderson2023listen,
-    title={Listen, Denoise, Action! Audio-Driven Motion Synthesis with Diffusion Models},
-    author={Alexanderson, Simon and Nagy, Rajmund and Beskow, Jonas and Henter, Gustav Eje},
-    journal={ACM Trans. Graph.},
-    volume={42},
-    number={4},
-    pages={1--20},
-    doi={10.1145/3592458},
-    year={2023}
+  title={Listen, Denoise, Action! Audio-Driven Motion Synthesis with Diffusion Models},
+  author={Alexanderson, Simon and Nagy, Rajmund and Beskow, Jonas and Henter, Gustav Eje},
+  journal={ACM Trans. Graph.},
+  volume={42},
+  number={4},
+  pages={1--20},
+  doi={10.1145/3592458},
+  year={2023}
 }
 ```
-
