@@ -1,5 +1,5 @@
-# Listen Denoise Action
-This repository contains code for reproducing the paper [Listen, denoise, action! Audio-driven motion synthesis with diffusion models](https://arxiv.org/abs/2211.09707).
+# Listen, Denoise, Action!
+This repository contains code for the paper [Listen, denoise, action! Audio-driven motion synthesis with diffusion models](https://arxiv.org/abs/2211.09707).
 
 Please watch the following video for an introduction to the paper:
 * SIGGRAPH 2023 Presentation: [https://youtu.be/Qfd2EpzWgok](https://youtu.be/Qfd2EpzWgok)
@@ -17,13 +17,12 @@ pip install -r requirements.txt
 ```
 
 # Dance synthesis demo
-We include processed test music inputs for generating dances from the model.
+## Data and pretrained models
+Please download our pretrained dance models from [here](https://zenodo.org/record/8156769) and move them to the `pretrained_models` folder.
+We include processed music inputs from the test dataset in the `data` folder for generating dances from the model.
 
-## Pretrained models
-Please download pretrained dance models from [here](https://zenodo.org/record/8156769) and move them to the `pretrained_models` folder.
-
-## Synthesis
-We provide shell scripts for reproducing the dance user studies in the paper. To try out locomtion synthesis, please go to http://motorica.ai
+## Synthesis scripts
+We provide shell scripts for reproducing the dance user studies in the paper. To try out locomotion synthesis, please go to http://motorica.ai/.
 ```
 ./experiments/dance_LDA.sh
 ./experiments/dance_LDA-U.sh
