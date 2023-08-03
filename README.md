@@ -29,7 +29,7 @@ We provide shell scripts for reproducing the dance user studies in the paper. To
 ```
 
 ## License and copyright information
-The contents of this repository may not be used for any purpose other than academic research. It is free to use for research purposes by academic institutes, companies, and individuals. Use for commercial purposes is not permitted without prior written consent from Motorica AB. If you are interested in using the codebase or the dataset for commercial purposes or non-research purposes, please contact us at info@motorica.ai in advance. Unauthorized redistribution of any content of the database is prohibited.
+The contents of this repository may not be used for any purpose other than academic research. It is free to use for research purposes by academic institutes, companies, and individuals. Use for commercial purposes is not permitted without prior written consent from Motorica AB. If you are interested in using the codebase, pretrained models or the dataset for commercial purposes or non-research purposes, please contact us at info@motorica.ai in advance. Unauthorised redistribution is prohibited without written approval from the copyright holder(s).
 
 Please include the following citations in any preprints and publications that use this repository.
 ```
@@ -44,3 +44,4 @@ Please include the following citations in any preprints and publications that us
   year={2023}
 }
 ```
+The [code for translation-invariant self-attention](https://github.com/ulmewennberg/tisa) (TISA) was written by [Ulme Wennberg](https://www.kth.se/profile/ulme). Please cite their [ACL 2021 article](https://aclanthology.org/2021.acl-short.18) if you use this code.
