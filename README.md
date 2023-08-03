@@ -29,7 +29,7 @@ We provide shell scripts for reproducing the dance user studies in the paper. To
 ```
 
 ## License and copyright information
-The contents of this repository may not be used for any purpose other than academic research. It is free to use for research purposes by academic institutes, companies, and individuals. Use for commercial purposes is not permitted without prior written consent from Motorica AB. If you are interested in using the codebase, pretrained models or the dataset for commercial purposes or non-research purposes, please contact us at info@motorica.ai in advance. Unauthorised redistribution is prohibited without written approval from the copyright holder(s).
+The contents of this repository may not be used for any purpose other than academic research. It is free to use for research purposes by academic institutes, companies, and individuals. Use for commercial purposes is not permitted without prior written consent from Motorica AB. If you are interested in using the codebase, pretrained models or the dataset for commercial purposes or non-research purposes, please contact us at info@motorica.ai in advance. Unauthorised redistribution is prohibited without written approval.
 
 Please include the following citations in any preprints and publications that use this repository.
 ```
