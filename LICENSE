@@ -1,16 +1,18 @@
 License and Copyright Information
 ---------------------------------
-The contents of this repository may not be used for any purpose other than academic research. It is free to use for research purposes by academic institutes, companies, and individuals. Use for commercial purposes is not permitted without prior written consent from Motorica AB. If you are interested in using the codebase or the dataset for commercial purposes or non-research purposes, please contact us at info@motorica.ai in advance. Unauthorized redistribution of any content of the database is prohibited.
+The contents of this repository may not be used for any purpose other than academic research. It is free to use for research purposes by academic institutes, companies, and individuals. Use for commercial purposes is not permitted without prior written consent from Motorica AB. If you are interested in using the codebase, pretrained models or the dataset for commercial purposes or non-research purposes, please contact us at info@motorica.ai in advance. Unauthorised redistribution is prohibited without written approval.
 
 Please include the following citations in any preprints and publications that use this repository.
 
-    @article{alexanderson2023listen,
-      title={Listen, Denoise, Action! Audio-Driven Motion Synthesis with Diffusion Models},
-      author={Alexanderson, Simon and Nagy, Rajmund and Beskow, Jonas and Henter, Gustav Eje},
-      journal={ACM Trans. Graph.},
-      volume={42},
-      number={4},
-      pages={1--20},
-      doi={10.1145/3592458},
-      year={2023}
-    }
+@article{alexanderson2023listen,
+  title={Listen, Denoise, Action! Audio-Driven Motion Synthesis with Diffusion Models},
+  author={Alexanderson, Simon and Nagy, Rajmund and Beskow, Jonas and Henter, Gustav Eje},
+  journal={ACM Trans. Graph.},
+  volume={42},
+  number={4},
+  pages={1--20},
+  doi={10.1145/3592458},
+  year={2023}
+}
+
+The code for translation-invariant self-attention (TISA) was written by Ulme Wennberg. Please cite their ACL 2021 article if you use this code.
