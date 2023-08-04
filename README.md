@@ -30,10 +30,11 @@ You can use the following shell scripts for reproducing the dance user studies i
 To try out locomotion synthesis, please go to https://www.motorica.ai/.
 
 ## Training data
-The three main training datasets from our SIGGRAPH 2023 paper are available online:
+The four main training datasets from our SIGGRAPH 2023 paper are available online:
 * [The Trinity Speech Gesture Dataset](https://trinityspeechgesture.scss.tcd.ie/)
 * [The ZEGGS dataset](https://github.com/ubisoft/ubisoft-laforge-ZeroEGGS)
-* [The Motorica Dance Dataset](https://github.com/simonalexanderson/MotoricaDanceDataset/), released together with our paper
+* [The 100STYLE dataset](https://www.ianxmason.com/100style/)
+* [The Motorica Dance Dataset](https://github.com/simonalexanderson/MotoricaDanceDataset/), a new dataset with high-quality dance mocap released together with our paper
 
 ## License and copyright information
 The contents of this repository may not be used for any purpose other than academic research. It is free to use for research purposes by academic institutes, companies, and individuals. Use for commercial purposes is not permitted without prior written consent from Motorica AB. If you are interested in using the codebase, pretrained models or the dataset for commercial purposes or non-research purposes, please contact us at info@motorica.ai in advance. Unauthorised redistribution is prohibited without written approval.
