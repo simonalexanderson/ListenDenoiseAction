@@ -12,7 +12,7 @@ We provide a Docker file and `requirements.txt` for installation using a Docker 
 ### Installation using Conda
 ```
 conda install python=3.9
-conda install -c conda-forge mpi4py mpic
+conda install -c conda-forge mpi4py mpich
 pip install -r requirements.txt
 ```
 
