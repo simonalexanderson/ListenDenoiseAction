@@ -1,10 +1,10 @@
 # Listen, Denoise, Action!
 This repository provides code and models for the paper [Listen, denoise, action! Audio-driven motion synthesis with diffusion models](https://arxiv.org/abs/2211.09707).
 
-Please watch the following video for an introduction to the paper:
+Please watch the following video for an introduction to our work:
 * [SIGGRAPH 2023 presentation](https://youtu.be/Qfd2EpzWgok)
 
-For video samples and a general overview, please see [our project page](https://www.speech.kth.se/research/listen-denoise-action/).
+For video samples and a general overview, please see [our project page](https://www.speech.kth.se/research/listen-denoise-action/). For the new dance dataset with high-quality mocap, please see [the Motorica Dance Dataset](https://github.com/simonalexanderson/MotoricaDanceDataset/).
 
 ## Installation
 We provide a Docker file and `requirements.txt` for installation using a Docker image or Conda.
